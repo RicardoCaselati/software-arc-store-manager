@@ -1,0 +1,21 @@
+[
+  {
+    "_id": "332e3072-7f68-4e37-a0c4-739f41952e77",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products",
+    "url": "http://localhost:3000/sales",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-10-13T20:39:24.017Z",
+    "modified": "2022-10-17T18:18:41.962Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "[\n    {\n      \"productId\": 1,\n      \"quantity\": 1\n    },\n    {\n      \"productId\": 2,\n      \"quantity\": 5\n    }\n]",
+      "form": []
+    },
+    "tests": []
+  }
+]
