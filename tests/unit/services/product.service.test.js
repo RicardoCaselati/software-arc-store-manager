@@ -3,7 +3,7 @@ const sinon = require('sinon');
 
 const { productsMock } = require('../mocks/product.mock');
 
-const { productService } = require('../../../src/services');
+const productService = require('../../../src/services/product.service');
 
 describe('Testes da Camada Product Service', function () {
   beforeEach(function () {
@@ -16,7 +16,7 @@ describe('Testes da Camada Product Service', function () {
   });
   
   describe('Lista todos produtos', function () {
-    it('com o tipo array', async function () {
+    it('com o tipo array', async function () {0
       // const { productService } = require('../../../src/services');
 
       const products = await productService.productsServiceGetAll();
