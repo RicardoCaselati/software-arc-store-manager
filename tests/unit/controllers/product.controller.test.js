@@ -7,13 +7,12 @@ const {
   serviceReturnMock,
   productsMock,
   productCreated,
+  updatedProduct,
 } = require('../../unit/mocks/product.mock');
 
 const productService = require('../../../src/services/product.service');
 
 const productController = require('../../../src/controllers/product.controller');
-
-
 
 chai.use(sinonChai);
 
@@ -57,6 +56,7 @@ describe('Testes da Camada Product Controller', function () {
       expect(res.json).to.have.been.calledOnceWith(productsMock[0]);
     });
   });
+
   describe('Cadastra um novo produto', function () {
     sinon
       .stub(productService, 'productsServiceInsert')
@@ -78,5 +78,28 @@ describe('Testes da Camada Product Controller', function () {
       expect(res.status).to.have.been.calledOnceWith(201);
     });
   });
+
+  // describe('Atualiza um produto pelo ID', function () {
+  //   sinon
+  //     .stub(productService, 'productsServiceUpdateById')
+  //     .resolves(updatedProduct);
+
+  //   it('é chamado o status com o código 200', async function () {
+  //     const res = {};
+  //     const req = {
+  //       body: {
+  //         name: 'Martelo do Batman',
+  //       },
+  //     };
+
+  //     res.status = sinon.stub().returns(res);
+  //     res.json = sinon.stub().returns();
+
+  //     await productController.productsControllerInsert(req, res);
+  //     // console.log(res.status);
+  //     // expect(res.status).to.have.been.calledOnceWith(200);
+  //     expect(res.json).to.have.been.calledOnceWith(updatedProduct);
+  //   });
+  // });
 });
 

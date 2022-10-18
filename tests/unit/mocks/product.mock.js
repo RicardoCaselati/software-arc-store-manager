@@ -21,9 +21,15 @@ const errorErrorProductNotFound = {
   message: 'Product not found'
 }
 
+const updatedProduct = {
+  "id": 1,
+  "name": "Martelo do Batman"
+}
+
 module.exports = {
   productsMock,
   serviceReturnMock,
   errorErrorProductNotFound,
   productCreated,
+  updatedProduct,
 }
