@@ -79,27 +79,30 @@ describe('Testes da Camada Product Controller', function () {
     });
   });
 
-  // describe('Atualiza um produto pelo ID', function () {
-  //   sinon
-  //     .stub(productService, 'productsServiceUpdateById')
-  //     .resolves(updatedProduct);
+  describe('Atualiza um produto pelo ID', function () {
+    sinon
+      .stub(productService, 'productsServiceUpdateById')
+      .resolves(updatedProduct);
 
-  //   it('é chamado o status com o código 200', async function () {
-  //     const res = {};
-  //     const req = {
-  //       body: {
-  //         name: 'Martelo do Batman',
-  //       },
-  //     };
+    it('é chamado o status com o código 200', async function () {
+      const res = {};
+      const req = {
+        params: {
+          id: 1
+        },
+        body: {
+          name: 'Martelo do Batman',
+        },
+      };
 
-  //     res.status = sinon.stub().returns(res);
-  //     res.json = sinon.stub().returns();
+      res.status = sinon.stub().returns(res);
+      res.json = sinon.stub().returns();
 
-  //     await productController.productsControllerInsert(req, res);
-  //     // console.log(res.status);
-  //     // expect(res.status).to.have.been.calledOnceWith(200);
-  //     expect(res.json).to.have.been.calledOnceWith(updatedProduct);
-  //   });
-  // });
+      await productController.productsControllerUpdateById(req, res);
+
+      expect(res.status).to.have.been.calledOnceWith(200);
+      expect(res.json).to.have.been.calledOnceWith(updatedProduct);
+    });
+  });
 });
 
